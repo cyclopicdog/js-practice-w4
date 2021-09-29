@@ -1,0 +1,56 @@
+@mixin flew-row-right() {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+}
+
+.navigation {
+    width: 100vw;
+    height: 100px;
+    @include flew-row-right();
+    border-bottom: 1px solid blueviolet;
+}
+
+.navbar {
+    @include flew-row-right();
+    &__link {
+        width: auto;
+        display: relative;
+        margin: 0 2px;
+        padding: 5px;
+        border-radius: 3px;
+        text-align: center;
+        background-color: blueviolet;
+        color: chartreuse;
+        text-decoration: none;
+    }
+    &__show {
+        font-size: 0.8em;
+        cursor: pointer;
+    }
+    &__expandable {
+        width: auto;
+        display: relative;
+    }
+    &__drop-down {
+        display: absolute;
+        top: 0;
+        &--hidden {
+            display: none;
+        }
+    }
+}
